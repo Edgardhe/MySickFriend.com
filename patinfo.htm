@@ -1,0 +1,18 @@
+<?php
+	session_start();
+	include 'dbstuff.php';
+	$patient = $_SESSION['Patient'];
+	echo "<br />Patient: " . $patient . "<br />";
+	$query = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patient'",$con) or die(mysql_error());
+//	$query = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patient'",$con) or die(mysql_error());
+//	while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
+//	{
+//		echo $row["FNamePat"] . " " . $row ["LNamePat"] . "<br />" .
+//			"Facility " . $row["Location"] . "<br />" . 
+//			"Room Number " . $row["RoomNumber"] . "<br />" .
+//			"Street " . $row["LocationStreet"] . "<br />" .
+//			"City " . $row["LocationCity"] . "<br />" .
+//			"State " . $row["LocationState"] . "<br />" .
+//			"Zip " . $row["LocationZip"] . "<br />";
+//	}
+?>

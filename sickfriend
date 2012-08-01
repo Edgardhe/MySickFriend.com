@@ -1,0 +1,26 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="18">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="232" startPos="96" endPos="45" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\index.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="456" startPos="0" endPos="0" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\nav.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\logout.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="584" startPos="0" endPos="0" selMode="0" lang="HTML" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\login.htm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1064" startPos="157" endPos="157" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\login.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="808" startPos="8" endPos="86" selMode="0" lang="HTML" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\newpatient.htm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1360" startPos="1069" endPos="1069" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\newpatient.php" />
+            <File firstVisibleLine="21" xOffset="0" scrollWidth="1237" startPos="1706" endPos="1706" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\newuser.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="608" startPos="0" endPos="0" selMode="0" lang="HTML" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\newuser.htm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="640" startPos="247" endPos="0" selMode="0" lang="HTML" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\status.htm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1056" startPos="514" endPos="28" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\status.php" />
+            <File firstVisibleLine="5" xOffset="0" scrollWidth="1080" startPos="393" endPos="393" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\patpick.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1080" startPos="517" endPos="517" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\funpick.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="472" startPos="0" endPos="0" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\dbstuff.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="496" startPos="0" endPos="0" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\upload.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="840" startPos="109" endPos="109" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\post.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1244" startPos="49" endPos="49" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\patinfo.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="848" startPos="379" endPos="379" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\mainview.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1064" startPos="619" endPos="619" selMode="0" lang="PHP" filename="C:\Users\Edgar\Documents\My Dropbox\HendersonIT\sickfriend\statusshow.php" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

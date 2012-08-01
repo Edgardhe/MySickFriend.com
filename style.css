@@ -1,0 +1,157 @@
+p {text-indent:0em;
+	font-size:.8em;
+	font-family:"Arial","Helvetica","sans-serif";
+}
+
+ul {list-style-position:inside;
+	font-family:"Arial","Helvetica","sans-serif";
+	list-style-type: none;
+	}
+
+h1 {font-family:"Arial","Helvetica","sans-serif";
+	font-size:2em;
+	font-style:bold;}
+
+h2 {font-family:"Arial","Helvetica","sans-serif";
+	font-variant:small-caps;
+	font-style:bold;
+	font-size:1.5em;
+	font-style:bold;}
+
+h3 {font-family:"Arial","Helvetica","sans-serif";
+	font-variant:small-caps;
+	font-style:bold;
+	font-size:1.25em;
+	font-style:bold;}
+	
+a:link {text-decoration:none;
+	color:black;}
+
+a:visited {color:#ED4F11;
+	text-decoration:none;}
+
+a:hover {color:#7c85f6;
+	text-decoration:none;}
+
+body {color: black;}
+
+#left {/*position:fixed;
+	left:10px;
+	top:10px; */
+	float:left;
+	padding:10px;
+	width:300px;}
+	
+#mid , #indexmid{/*position:fixed;
+	left:335px; */
+	float:left;
+	padding:10px;
+	width:300px;}
+	
+#right,#across {float:left;
+/*	position:relative;
+	left:650px; */
+	padding:10px;
+	width:470px;}
+
+
+#across{width:450px;}
+
+	
+	
+#status {border: 1px solid #F5EDCB;
+	margin-bottom:10px;
+	background:#E6EAF7;
+	border-radius:10px;
+	-moz-border-radius:10px;}
+
+#status p {padding-left:10px;}
+
+#statusarea {background:#E6EAF7;
+	width:95%;
+	padding:4px;}
+
+#message {background:#DAE1F7;
+		diaplay:block;
+		padding:7px 0 10px 0;}
+
+
+		
+#patinfo {font-family:"Arial","Helvetica","sans-serif";
+	background:#E6EAF7;
+	padding:10px 15px 10px 15px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	margin-bottom:10px;}
+ 
+ 
+#newpat label,#newpat select {display: block;
+	width: 125px;
+	float: left;}
+
+#newpat input{display:block;
+	width:165px;
+	float:left;}
+
+#mainlogin,#mainnewuser {
+	padding:10px;
+	background:#E6EAF7;
+	border-radius:10px;
+	-moz-border-radius:10px;}
+	
+#mainlogin form, #mainnewuser form{background:#E6EAF7;
+	padding: 7px;
+	border-radius:10px;
+	-moz-border-radius:10px;}
+
+#login label , #login select{display:inline-block; 
+	width:100px; /*
+	float:left;*/}
+	
+#login input {display: inline-block;/*
+	width:150px;
+	float:left;*/
+	}
+
+textarea {font-family:"Arial";
+	border-radius:10px;
+	-moz-border-radius:10px;}
+
+#title {width:200;}
+	
+
+#picker, #newpat{float:left;
+	clear:both;
+	}
+	
+#nav, .notp {background:#E6EAF7;
+	padding:10px 0 10px 0;
+	border-radius:10px;
+	-moz-border-radius:10px;}
+	
+.notp p {padding: 0 10px 0 10px;}
+
+#nav {float:left;
+	clear:both;
+	width:100%;}
+	
+.myname {padding-left: 10px;}
+
+#mainmsg p {padding:10px;}
+	
+#left, #mid, #across{background:#DAE1F7;
+	padding: 10px;
+	margin-left:10px;
+	border-radius:10px;
+	-moz-border-radius:10px;}
+	
+	
+.textlab {width:80px;
+	display:inline-block;}
+	
+.vspace {border-bottom:3px;}
+
+#date {float:right;
+	padding-right:10px;}	
+	
+#login submit {background:red;}
