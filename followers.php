@@ -16,7 +16,7 @@
 		else
 		{
 			$query = mysql_query("SELECT * FROM permissions WHERE PatIDPERM = '$patient'",$con) or die(mysql_error());
-			if (mysql_num_rows($query)>1)
+			if (mysql_num_rows($query)>=1)
 			{
 				echo "<div id='follower'><p>";
 				while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
