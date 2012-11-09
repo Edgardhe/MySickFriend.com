@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (!$_SESSION['followers'])
+	if (!$_POST['followers'])
 	{
 		echo "<p>Sorry! There seems to be an error. Click <a href='index.php' />here</a> redirected to login again.</p>";
 

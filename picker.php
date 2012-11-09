@@ -11,6 +11,12 @@
 </head>
 <body>
 	<div id="left">
+<?php
+	if  (!$_COOKIE["login"] == "1")
+	{
+		header("Location:login.htm");
+	}
+?>
 		<div id="nav"></div>
 		<div id="patpik"></div>
 		<div id="newpat"></div>

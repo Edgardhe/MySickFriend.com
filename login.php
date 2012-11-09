@@ -19,7 +19,7 @@
 			if (mysql_num_rows($query) > 0) 
 			{
 				echo mysql_result($query,0,1) . " " . mysql_result($query,0,2) . " is logged in!<br />";
-				
+				setcookie("login","1");
 				$_SESSION['user'] = mysql_result($query,0,0);
 				$_SESSION['name'] = mysql_result($query,0,1) . " " . mysql_result($query,0,2);
 				mysql_close($con);
