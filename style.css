@@ -124,16 +124,24 @@ textarea {font-family:"Arial";
 	clear:both;
 	}
 	
-#nav, .notp {background:#E6EAF7;
-	padding:10px 0 10px 0;
-	border-radius:10px;
-	-moz-border-radius:10px;}
-	
-.notp p {padding: 0 10px 0 10px;}
-
 #nav {float:left;
 	clear:both;
 	width:100%;}
+
+#nav li {display: inline;}
+
+#nav .navlist {padding: 3px 5px 3px 5px;}
+	
+#nav, .notp {background:#E6EAF7;
+	padding:10px 0 10px 0;
+	border-radius:5px;
+	-moz-border-radius:5px;}
+
+#navleft, #navright{float:left;}
+	
+.notp p {padding: 0 10px 0 10px;}
+
+
 	
 .myname {padding-left: 10px;}
 

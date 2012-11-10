@@ -24,8 +24,9 @@
 	?>
 </head>
 <body>
+	<div id="nav"></div>
 	<div id="left">
-		<div id="nav"></div>
+
 		<h3>choose patient</h3>
 		<div id="patpik"></div>
 		<h3 class="clicker">add a new patient</h3>

@@ -10,14 +10,19 @@
 
 </head>
 <body>
+	<?php
+		session_start();
+		if ($_SESSION['user'] || ($_COOKIE['login'] == "1"))
+		{
+			header("Location:picker.php");
+		}
+	?>
+	<div id="nav"></div>	
 	<div id="left">
-		<div id="nav"></div>
-		<div id="mainlogin"></div><br /></div>
+		<div id="mainnewuser"></div>
+	</div> <!-- left -->
 
-	</div>
-	<div id="indexmid">
-		<div id="mainnewuser"></div>			
-	</div>
+
 	<div id="across">
 			<h2>Welcome to My Sick Friend</h2>			
 			<div class="notp">
@@ -29,12 +34,11 @@
 					<p>As a non-primary contact, create an account and enter the invite code from your email and you will be allowd to see the status 
 						of your friend or family member and add posts.</p>
 					<p>In the near future, We will add text messaing services that will allow you to text updates about from any cell phone with a texting plan.</p>
-			</div>	
-	</div>
+			</div>	<!-- notp -->
+	</div> <!-- across -->
 
 	<script type="text/javascript">
-		$('#nav').load('nav.php');
-		$('#mainlogin').load('login.htm');
+		$('#nav').load('indexnav.php');
 		$('#mainnewuser').load('newuser.htm');
 	</script>
 </body>
