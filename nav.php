@@ -5,20 +5,13 @@
 <http>
 	<div id="navleft">
 		<img src="images/title.jpg" id ="title" />
-		<?php
-			session_start();
-			if ($_SESSION['name'])
-			{
-				echo "<h3 class='myname'>" . $_SESSION['name'] . "</h3>";
-			}
-		?>
 	</div> <!-- navleft -->
 	
 	<div id="navright">
 		<ul>
-			<li><span class="navlist"><a href='index.php'>HOME</a></span></li>
-			<li><span class="navlist"><a href='logout.php'>LOGOUT</a></span></li>
-			<li><span class="navlist"><a href='newpatient.htm'>NEW PATIENT</a></span></li>
+			<li><span class="navlist"><a href='index.php'> | HOME |</a></span></li>
+			<li><span class="navlist"><a href='logout.php'> LOGOUT |</a></span></li>
+			<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.htm'> NEW PATIENT |</a></span></li>
 		</ul>
 	</div> <!-- navright -->
 	

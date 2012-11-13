@@ -20,7 +20,13 @@
 	<div id="nav"></div>
 	
 	<div id="left">
-
+		<?php
+			session_start();
+			if ($_SESSION['name'])
+			{
+				echo "<h3 class='myname'>" . $_SESSION['name'] . "</h3>";
+			}
+		?>
 
 		<div id="patpik"></div>
 		<div id="newpat"></div>

@@ -105,7 +105,7 @@ body {color: black;}
 	-moz-border-radius:10px;}
 
 #login label , #login select{display:inline-block; 
-	width:100px; /*
+	/*width:100px; 
 	float:left;*/}
 	
 #login input {display: inline-block;/*
@@ -130,17 +130,20 @@ textarea {font-family:"Arial";
 
 #nav li {display: inline;}
 
-#nav .navlist {padding: 3px 5px 3px 5px;}
+/* #nav .navlist {padding: 3px 5px 3px 5px;} */
 	
 #nav, .notp {background:#E6EAF7;
-	padding:10px 0 10px 0;
+/*	padding:10px 0 10px 0; */
 	border-radius:5px;
 	-moz-border-radius:5px;}
 
-#navleft, #navright{float:left;}
-	
-.notp p {padding: 0 10px 0 10px;}
+#navleft {float:left;}
 
+#navright {float:right;}
+	
+/* .notp p {padding: 0 10px 0 10px;} */
+
+#login submit {background:red;}
 
 	
 .myname {padding-left: 10px;}
@@ -162,4 +165,4 @@ textarea {font-family:"Arial";
 #date {float:right;
 	padding-right:10px;}	
 	
-#login submit {background:red;}
+

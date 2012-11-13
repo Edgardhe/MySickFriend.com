@@ -10,7 +10,7 @@
 	<div id="navright">
 		<form action="login.php" method="post" enctype="multipart/form-data">
 		<div id="login"> 
-		<p>	
+		<p>	Login |  
 		<label for="email">Email:</label>
 		<input type="text" name="EMail" id="EMail" />
 		
