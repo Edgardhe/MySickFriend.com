@@ -54,7 +54,10 @@ body {color: black;}
 	padding:10px;
 	width:470px;}
 
-
+.submit {background: white;
+		border:0px;
+		border-radius: 3px;}
+		
 #across{width:450px;}
 
 	

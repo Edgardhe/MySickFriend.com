@@ -17,7 +17,20 @@
 		}
 	?>
 	
-	<div id="nav"></div>
+	<div id="nav">
+		<div id="navleft">
+			<img src="images/title.jpg" id ="title" />
+		</div> <!-- navleft -->
+		
+		<div id="navright">
+			<ul>
+				<li><span class="navlist"><a href='index.php'> | HOME |</a></span></li>
+				<li><span class="navlist"><a href='logout.php'> LOGOUT |</a></span></li>
+				<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.htm'> NEW PATIENT |</a></span></li>
+			</ul>
+		</div> <!-- navright -->	
+	
+	</div> <!-- nav -->
 	
 	<div id="left">
 		<?php
@@ -30,19 +43,20 @@
 
 		<div id="patpik"></div>
 		<div id="newpat"></div>
-	</div>
+	</div> <!-- left -->
+	
 	<div id="mid">
 		<div id="patlink"></div>
 
-	</div>
+	</div> <!-- mid -->
+	
 	<div id="right">
-	</div>
+	</div> <!-- right -->
 
 	<script type="text/javascript">
-		$('#nav').load('nav.php');
+//		$('#nav').load('nav.php');
 		$('#patpik').load('patpick.php');
 		$('#patlink').load('patlink.htm');
-		$('#newpat').load('newpatient.htm');
 	</script>	
 	
 	

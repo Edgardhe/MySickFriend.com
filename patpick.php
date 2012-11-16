@@ -16,6 +16,7 @@
 			$IDUSER = $_SESSION['user'];
 //			$query = mysql_query("SELECT * FROM patient WHERE IDUSER = '$IDUSER'",$con) or die(mysql_error());
 			$query = mysql_query("SELECT * FROM permissions  WHERE (UserIDPERM = '$IDUSER')",$con) or die(mysql_error());			
+			echo "<h3>Patient</h3>";
 			echo "<form method='post' action='mainview.php'>"; 
 			$rowsize = mysql_num_rows($query);
 			
@@ -29,7 +30,7 @@
 			}
 			echo "</select>";
 			mysql_close($con);
-			echo "<input type='submit' name='submit' value='Submit' /></form></div>";
+			echo "<input class='submit' type='submit' name='submit' value='Submit' /></form></div>";
 		}
 		else
 		{

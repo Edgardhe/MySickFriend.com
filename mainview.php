@@ -24,15 +24,30 @@
 	?>
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav">
+		<div id="navleft">
+			<img src="images/title.jpg" id ="title" />
+		</div> <!-- navleft -->
+		
+		<div id="navright">
+			<ul>
+				<li><span class="navlist"><a href='index.php'> | HOME |</a></span></li>
+				<li><span class="navlist"><a href='logout.php'> LOGOUT |</a></span></li>
+				<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.htm'> NEW PATIENT |</a></span></li>
+			</ul>
+		</div> <!-- navright -->	
+	</div> <!-- nav -->
 	<div id="left">
-
+		<?php
+			session_start();
+			if ($_SESSION['name'])
+			{
+				echo "<h3 class='myname'>" . $_SESSION['name'] . "</h3>";
+			}
+		?>
 		<h3>choose patient</h3>
 		<div id="patpik"></div>
-		<h3 class="clicker">add a new patient</h3>
-		<div id="newpatient" class="clicked"></div>
-		<h3 class="clicker">link to an existing patient</h3>
-		<div id="patlink" class="clicked"></div>
+		<div id="newpat" class="clicked"></div>
 	</div>
 	<div id="mid">
 		<div id="patinfo"></div>
@@ -55,14 +70,8 @@
 		$('#patpik').load('patpick.php');
 		$('#statuses').load('statusshow.php');
 		$('#statform').load('status.htm');
-		$('#patlink').load('patlink.htm');
-		$('#newpatient').load('newpatient.htm');
-		
-//		$('.clicked').hide();
-//		$('.clicker').click(function(){$(this).next().toggle("slow");});
-		
-		$('#patedit').click(function(){$('#patinfo').load('patedit.php'); $('#patedit').hide();});
 	</script>		
 	
 </body>	
 </html>
+
