@@ -30,7 +30,7 @@
 			}
 			echo "</select>";
 			mysql_close($con);
-			echo "<input class='submit' type='submit' name='submit' value='Submit' /></form></div>";
+			echo "<br /><input class='submit' type='submit' name='submit' value='Submit' /></form></div>";
 		}
 		else
 		{
