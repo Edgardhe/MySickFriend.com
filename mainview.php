@@ -46,22 +46,33 @@
 		</div> <!-- navright -->	
 	</div> <!-- nav -->
 
+	<div id="mvsidenav">
+		<button class="sidebutton" type="button">Invite Followers</button><br />
+		<button class="sidebutton" type="button">New Patient</button>
+		<button class="sidebutton" id="butinvite" type="button">Invite Followers</button>
+		<button class="sidebutton" id="butswitch" type="button">Switch Patients</button>
+		<div id="follow"></div>	
+	</div> <!-- mvsidenav -->
+	
+	<div id="mvshowhide">
+		<div id="patpik"></div> <!-- patpick -->
+
+		<div id="invite" class="clicked"></div>	
+	</div> <!-- mvshowhide -->
+	
 	<div id="mvleft">
 		<div id="patinfo"></div>
 		<button id="patedit" type="button">Edit Patient</button>
-		<h3 class="clicker">Invite followers</h3>
-		<div id="invite" class="clicked"></div>	
+
 	</div> <!-- mvleft -->
 	
-	<div id="mvmid">
+
 		
-		<div id="patpik"></div>
-		<div id="newpat" class="clicked"></div>
-		<h3>Followed by</h3>
-		<div id="follow"></div>
-	</div> <!-- mvmid -->	
+
+<!--	<div id="newpat" class="clicked"></div> -->
 	
-	<div id="right">
+	
+	<div id="mvright">
 	
 		<div id="statform"></div>
 		<div id="statuses"></div>
@@ -75,6 +86,18 @@
 		$('#patpik').load('patpick.php');
 		$('#statuses').load('statusshow.php');
 		$('#statform').load('status.htm');
+		$('#patedit').click(function(){
+							$('#patinfo').empty();
+							$('#patinfo').load('patedit.php');});
+		$('#mvshowhide').hide();
+		$('#invite').hide();
+		$('#butinvite').click(function(){
+			$('#mvshowhide').show();
+			$('#invite').show();});
+		$('#patpik').hide();
+		$('#butswitch').click(function(){
+			$('#mvshowhide').show();
+			$('#patpik').show();});
 	</script>		
 	
 </body>	

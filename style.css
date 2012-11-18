@@ -43,10 +43,11 @@ body {color: black;}
 
 /* #nav .navlist {padding: 3px 5px 3px 5px;} */
 	
-#nav, .notp {background:#E6EAF7;
-/*	padding:10px 0 10px 0; */
+#nav, .notp {background:#F5F6FA /*E6EAF7*/; 
+	margin-bottom: 10px;
+/*	padding:10px 0 10px 0; 
 	border-radius:5px;
-	-moz-border-radius:5px;}
+	-moz-border-radius:5px; */}
 
 #navleft {float:left;}
 
@@ -60,57 +61,80 @@ body {color: black;}
 .myname {padding-left: 10px;}
 
 #mainmsg p {padding:10px;}
+
+#mvsidenav {float:left;
+	background: #F5F6FA;
+	width: 125px;}
+
+.sidebutton {width:125px;
+		height: 50px;
+		background: #EBEDF2;
+		color: black;
+		border: 1px solid white;}
+		
 	
-#left, #mid, #across, #mvleft, #mvmid, #mvright{
-	background:#DAE1F7;
-	padding: 10px;
-	margin-left:10px;
-	border-radius:10px;
-	-moz-border-radius:10px;}
+	
+#left, #mid, #across, #mvleft, #mvmid, #mvright, #right, #mvright{
+/*	background:#DAE1F7; */
+	padding-left: 10px;
+	padding-right: 10px;
+/*	margin-left:10px; */ 
+/*	border-radius:10px;
+	-moz-border-radius:10px; */}
 
 #left, #mvleft{float:left;
 	min-width: 200px;
 	max-width:32%;}
 	
+#mvshowhide {float: left;
+	width:150px;
+	margin-left: 7px;}
+	
 #mid , #indexmid, #mvmid{float:left;
 	min-width: 200px;
-	max-width: 32%;}
+	max-width: 32%;
+	border-left: 1px solid #DAE1F7;
+	border-bottom: 1px solid #DAE1F7;
+	margin-left: 5px;}
 	
 #right,#across, #mvright {float:left;
-	min-width: 200px;
-	max-width:100%;}
+	min-width: 250px;
+	max-width:50%;
+	border-left: 1px solid #DAE1F7;
+	padding-left: 10px;
+	margin-left: 5px;}
 	
 #mvmid{float: left;
 		padding:10px;
 		max-width: 150px;
 		min-width: 150px;}
 
-.submit {background: white;
-		border:0px;
+.submit {background: #DAE1F7;
+		border:1px solid #DAE1F7;
 		border-radius: 3px;}
 		
 #across{width:450px;}
 
-#status {border: 1px solid #F5EDCB;
+#status {border: 1px solid #E6EAF7;
 	margin-bottom:10px;
-	background:#E6EAF7;
+	background:#F5F6FA;
 	border-radius:10px;
 	-moz-border-radius:10px;}
 
 #status p {padding-left:10px;}
 
-#statusarea {background:#E6EAF7;
+#statusarea {background:#EBEDF2;
 	width:95%;
 	padding:4px;}
 
-#message {background:#DAE1F7;
+#message {background:#EBEDF2;
 		diaplay:block;
 		padding:7px 0 10px 0;}
 
 
 		
 #patinfo {font-family:"Arial","Helvetica","sans-serif";
-	background:#E6EAF7;
+	background:#F5F6FA/*#E6EAF7*/;
 	padding:10px 15px 10px 15px;
 	border-radius:10px;
 	-moz-border-radius:10px;
