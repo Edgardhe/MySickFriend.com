@@ -83,7 +83,7 @@
 		$('#patinfo').load('patinfo.php');
 //		$('#nav').load('nav.php');
 		$('#follow').load('followers.php');
-		$('#patpik').load('patpick.php');
+		$('#patpik').load('patpick-alt2.php');
 		$('#statuses').load('statusshow.php');
 		$('#statform').load('status.htm');
 		$('#patedit').click(function(){
