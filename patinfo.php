@@ -16,3 +16,4 @@
 	}
 	mysql_close($con);
 ?>
+	<button id="patedit" type="button">Edit Patient</button>

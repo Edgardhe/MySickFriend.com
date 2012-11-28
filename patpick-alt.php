@@ -21,7 +21,7 @@
 //			$rowsize = mysql_num_rows($query);
 			
 
-//			echo "<select name='listbox' size='$rowsize'>";
+			echo "<select name='listbox'>";
 			while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
 			{
 //				echo "hello";
