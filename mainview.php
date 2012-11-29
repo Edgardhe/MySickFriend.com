@@ -78,17 +78,53 @@
 	</div> <!-- nav -->
 
 	<div id="mvsidenav">
-		<button class="sidebutton" type="button">Invite Followers</button><br />
-		<button class="sidebutton" type="button">New Patient</button>
+		<div id="invite" class="clicked"></div>	
+<!--		<button class="sidebutton" type="button">Invite Followers</button><br />
+		<button class="sidebutton" type="button">New Patient</button> -->
 		<button class="sidebutton" id="butinvite" type="button">Invite Followers</button>
-		<button class="sidebutton" id="butswitch" type="button">Switch Patients</button>
-		<div id="follow"></div>	
+<!--		<button class="sidebutton" id="butswitch" type="button">Switch Patients</button> -->
+		<h3>Followed by</h3>
+		<div id="follow">
+			<?php
+		
+				require 'dbstuff.php';
+				date_default_timezone_set('America/New_York');
+				mysql_select_db($dbuser,$con);		
+				session_start();		
+				$patient = $_SESSION['Patient'];
+				$IDUSER = $_SESSION['user'];
+				$name = $_SESSION['name'];
+				if (!$patient)
+				{
+					header("Location:mainview.php");
+				}
+				else
+				{
+					$query = mysql_query("SELECT * FROM permissions WHERE PatIDPERM = '$patient'",$con) or die(mysql_error());
+					if (mysql_num_rows($query)>=1)
+					{
+						echo "<p>";
+						while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
+						{
+							$userid = $row["UserIDPERM"];
+							$query2 = mysql_query("SELECT * FROM users WHERE IDUSER = '$userid'",$con) or die(mysql_error());
+							$name = mysql_result($query2,0,1) . " " . mysql_result($query2,0,2);
+							echo $name . "<br />";
+							
+						}
+						echo "</p>";
+					}
+					else
+					{
+						echo "No followers yet. Send some invites.";
+					}
+				}
+				mysql_close($con);
+			?>		
+		</div>	<!-- follow -->
 	</div> <!-- mvsidenav -->
 	
 	<div id="mvshowhide">
-		<div id="patpik"></div> <!-- patpick -->
-
-		<div id="invite" class="clicked"></div>	
 	</div> <!-- mvshowhide -->
 	
 	<div id="mvleft">
@@ -133,22 +169,23 @@
 		$('#invite').load('invite.htm');
 //		$('#patinfo').load('patinfo.php');
 //		$('#nav').load('nav.php');
-		$('#follow').load('followers.php');
-		$('#patpik').load('patpick-alt2.php');
+//		$('#follow').load('followers.php');
+//		$('#patpik').load('patpick-alt2.php');
 		$('#statuses').load('statusshow.php');
 		$('#statform').load('status.htm');
-		$('#patedit').click(function(){
-							$('#patinfo').empty();
-							$('#patinfo').load('patedit.php');});
-		$('#mvshowhide').hide();
+//		$('#patedit').click(function(){
+//							$('#patinfo').empty();
+//							$('#patinfo').load('patedit.php');});
+//		$('#mvshowhide').hide();
 		$('#invite').hide();
 		$('#butinvite').click(function(){
-			$('#mvshowhide').show();
 			$('#invite').show();});
-		$('#patpik').hide();
-		$('#butswitch').click(function(){
-			$('#mvshowhide').show();
-			$('#patpik').show();});
+//		$('#patpik').hide();
+//		$('#butswitch').click(function(){
+//			$('#mvshowhide').show();
+//			$('#patpik').show();});
+		$('#btnCancel').click(function(){
+			$('#invite').hide();});
 	</script>		
 	
 </body>	
