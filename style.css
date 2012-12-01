@@ -68,6 +68,19 @@ body {color: black;}
 	background: #F5F6FA;
 	width: 125px;}
 
+
+#frmPatient button {width:100%;
+	background: #EBEDF2;
+		color:black;
+		border-top: 1px solid #F5F6FA;
+		border-bottom: 1px solid #F5F6FA;
+		border-left: 0;
+		border-right: 0;
+		margin: 0;
+		padding: 2px 0 2px 0;}
+		
+#frmPatient button:hover {color:red;}
+
 .sidebutton {width:125px;
 		height: 50px;
 		background: #EBEDF2;
@@ -76,7 +89,7 @@ body {color: black;}
 		
 
 
-#invite {background: white;
+/*#invite {background: white;
 		width: 300px;
 		height: 200px;
 		position: absolute;
@@ -85,9 +98,9 @@ body {color: black;}
 		border: 20px solid gray;
 		margin-top: -100px;
 		margin-left: -150px;
-		padding: 15px;}
+		padding: 15px;} */
 	
-#left, #mid, #across, #mvleft, #mvmid, #mvright, #right, #mvright{
+#left, #mid, #across, #mvleft, #mvmid, #right{
 /*	background:#DAE1F7; */
 	padding-left: 10px;
 	padding-right: 10px;
@@ -117,6 +130,8 @@ body {color: black;}
 	padding-left: 10px;
 	margin-left: 5px;}
 	
+#mvright {padding-left: 0px;}
+	
 #mvmid{float: left;
 		padding:10px;
 		max-width: 150px;
@@ -128,19 +143,21 @@ body {color: black;}
 		
 #across{width:450px;}
 
-#status {border: 1px solid #E6EAF7;
+#status {border-top: 1px solid #E6EAF7; 
 	margin-bottom:10px;
 	background:#F5F6FA;
-	border-radius:10px;
-	-moz-border-radius:10px;}
+	margin-bottom: 10px;
+/*	border-radius:10px;
+	-moz-border-radius:10px;*/}
 
-#status p {padding-left:10px;}
+#status p {padding:5px 0 3px 10px;}
 
 #statusarea {background:#EBEDF2;
 	width:95%;
 	padding:4px;}
 
-#message {background:#EBEDF2;
+#message {/* background:#EBEDF2; */
+		background: #fcfbff;
 		diaplay:block;
 		padding:7px 0 10px 0;}
 
@@ -149,8 +166,8 @@ body {color: black;}
 #patinfo {font-family:"Arial","Helvetica","sans-serif";
 	background:#F5F6FA/*#E6EAF7*/;
 	padding:10px 15px 10px 15px;
-	border-radius:10px;
-	-moz-border-radius:10px;
+/*	border-radius:10px;
+	-moz-border-radius:10px; */
 	margin-bottom:10px;}
  
  

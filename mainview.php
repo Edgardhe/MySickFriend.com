@@ -37,7 +37,7 @@
 		
 		<div id="navright">
 		<ul>
-
+<!--
 				<li><span class="navlist"><?php
 					session_start();
 					include 'dbstuff.php';
@@ -69,7 +69,7 @@
 							echo "<input class='submit' type='submit' name='submit' value='Submit' /></form>";
 						}
 					}	
-				?></span></li>
+				?></span></li> -->
 				<li><span class="navlist"><a href='index.php'> | HOME |</a></span></li>
 				<li><span class="navlist"><a href='logout.php'> LOGOUT |</a></span></li>
 				<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.htm'> NEW PATIENT |</a></span></li>
@@ -78,11 +78,43 @@
 	</div> <!-- nav -->
 
 	<div id="mvsidenav">
-		<div id="invite" class="clicked"></div>	
 <!--		<button class="sidebutton" type="button">Invite Followers</button><br />
 		<button class="sidebutton" type="button">New Patient</button> -->
-		<button class="sidebutton" id="butinvite" type="button">Invite Followers</button>
+<!-- 		<button class="sidebutton" id="butinvite" type="button">Invite Followers</button> -->
 <!--		<button class="sidebutton" id="butswitch" type="button">Switch Patients</button> -->
+		<?php
+			session_start();
+			include 'dbstuff.php';
+//			require 'funpick.php';
+			
+			
+			if (!con) 
+			{
+				die ('could not connect');
+			}
+			else
+			{
+				if ($_SESSION['user'] >0)
+				{
+					mysql_select_db($dbuser,$con);
+					$IDUSER = $_SESSION['user'];
+					$query = mysql_query("SELECT * FROM permissions  WHERE (UserIDPERM = '$IDUSER')",$con) or die(mysql_error());			
+					echo "<form id='frmPatient' method='post' action='mainview.php'>"; 
+					echo "<h3>Following</h3>";
+					while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
+					{
+						$patpermid = $row['PatIDPERM'];
+						$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
+						$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
+						echo "<button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
+					}
+					mysql_close($con);
+					echo "</form>";
+				}
+			}	
+			?>		
+		
+		
 		<h3>Followed by</h3>
 		<div id="follow">
 			<?php
@@ -149,7 +181,7 @@
 			?>		
 			<button id="patedit" type="button">Edit Patient</button>
 		</div> <!-- patinfo -->
-		
+		<div id="invite" class="clicked"></div>	
 
 	</div> <!-- mvleft -->
 	
@@ -173,13 +205,13 @@
 //		$('#patpik').load('patpick-alt2.php');
 		$('#statuses').load('statusshow.php');
 		$('#statform').load('status.htm');
-//		$('#patedit').click(function(){
-//							$('#patinfo').empty();
-//							$('#patinfo').load('patedit.php');});
+		$('#patedit').click(function(){
+							$('#patinfo').empty();
+							$('#patinfo').load('patedit.php');});
 //		$('#mvshowhide').hide();
-		$('#invite').hide();
-		$('#butinvite').click(function(){
-			$('#invite').show();});
+//		$('#invite').hide();
+//		$('#butinvite').click(function(){
+//			$('#invite').show();});
 //		$('#patpik').hide();
 //		$('#butswitch').click(function(){
 //			$('#mvshowhide').show();
