@@ -37,39 +37,7 @@
 		
 		<div id="navright">
 		<ul>
-<!--
-				<li><span class="navlist"><?php
-					session_start();
-					include 'dbstuff.php';
-					require 'funpick.php';
-				
-					
-					if (!con) 
-					{
-						die ('could not connect');
-					}
-					else
-					{
-						if ($_SESSION['user'] >0)
-						{
-							mysql_select_db($dbuser,$con);
-							$IDUSER = $_SESSION['user'];
-							$query = mysql_query("SELECT * FROM permissions  WHERE (UserIDPERM = '$IDUSER')",$con) or die(mysql_error());			
-							echo "<form method='post' style='display:inline;' action='mainview.php'>"; 
-							echo "<select name='listbox'>";
-							while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
-							{
-								$patpermid = $row['PatIDPERM'];
-								$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
-								$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
-								echo "<option value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . "</option>";
-							}
-							echo "</select>";
-							mysql_close($con);
-							echo "<input class='submit' type='submit' name='submit' value='Submit' /></form>";
-						}
-					}	
-				?></span></li> -->
+
 				<li><span class="navlist"><a href='index.php'> | HOME |</a></span></li>
 				<li><span class="navlist"><a href='logout.php'> LOGOUT |</a></span></li>
 				<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.htm'> NEW PATIENT |</a></span></li>
