@@ -85,7 +85,7 @@
 		
 		function ckCarrier(elem,alertMsg)
 		{
-			if (elam.value !== 0)
+			if (elem.value !== "none")
 			{
 				return true;
 			}
@@ -96,13 +96,14 @@
 		
 		function passCheck(pass1,pass2,alertMsg)
 		{
-			if (txtEmpty(pass1,"You've got to have a password. Don't you?"))
+			if (pass1.value.length > 0)
 			{
-				if (pass1 === pass2)
-				{
-					return true;
+				if (pass1.value === pass2.value)
+				{  
+
+				return true;
 				}
-			}
+			}	
 			alert(alertMsg);
 			pass1.focus();
 			return false;
@@ -128,7 +129,7 @@
 				
 				<label for="Carrier">Carrier<br />U. S. csrriers for now</label>
 				<select name="Carrier" id="Carrier">
-					<option value="0">Select Carrier</option></option>
+					<option value="none">Select Carrier</option></option>
 					<option value="teleflip.com">Teleflip</option>	 
 					<option value="message.alltel.com">Alltel</option>
 					<option value="paging.acswireless.com">Ameritech</option>
