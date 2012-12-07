@@ -41,12 +41,46 @@
 			}
 		?>
 
-		<div id="patpik"></div>
+		<div id="patpik">
+			<?php /************************  FOLLOWING **************************************/
+				session_start();
+				include 'dbstuff.php';
+	//			require 'funpick.php';
+				
+				
+				if (!con) 
+				{
+					die ('could not connect');
+				}
+				else
+				{
+					if ($_SESSION['user'] >0)
+					{
+						mysql_select_db($dbuser,$con);
+						$IDUSER = $_SESSION['user'];
+						$query = mysql_query("SELECT * FROM permissions  WHERE (UserIDPERM = '$IDUSER')",$con) or die(mysql_error());			
+						echo "<form id='frmPatient' method='post' action='mainview.php'>"; 
+						echo "<h3>Following</h3>";
+						while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
+						{
+							$patpermid = $row['PatIDPERM'];
+							$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
+							$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
+							echo "<button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
+						}
+						mysql_close($con);
+						echo "</form>";
+					}
+				}	
+				?>  		
+		</div> <!-- patpick -->
+		
 		<div id="newpat"></div>
-	</div> <!-- left -->
+		<div id="patlink"></div>
+	</div> <!-- pvleft -->
 	
 	<div id="mid">
-		<div id="patlink"></div>
+
 
 	</div> <!-- mid -->
 	
@@ -55,7 +89,7 @@
 
 	<script type="text/javascript">
 //		$('#nav').load('nav.php');
-		$('#patpik').load('patpick.php');
+//		$('#patpik').load('patpick.php');
 		$('#patlink').load('patlink.htm');
 	</script>	
 	

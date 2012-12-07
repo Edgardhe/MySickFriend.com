@@ -25,14 +25,8 @@
 <body>
 	<div id="nav">
 		<div id="navleft">
-			<h3 class='myname'><img src="images/title.jpg" id ="title" />
-		<?php
-			session_start();
-			if ($_SESSION['name'])
-			{
-				echo  $_SESSION['name'] . "</h3>";
-			}
-		?>
+			<img src="images/title.jpg" id ="title" />
+			
 		</div> <!-- navleft -->
 		
 		<div id="navright">
@@ -44,85 +38,96 @@
 			</ul>
 		</div> <!-- navright -->	
 	</div> <!-- nav -->
-
-	<div id="mvsidenav">
+	
+	<div id="nameleft">
+		<?php
+			session_start();
+			if ($_SESSION['name'])
+			{
+				echo  "<h3 class='myname'>" . $_SESSION['name'] . "</h3>";
+			}
+		?>
+		
+		<div id="mvsidenav">
 <!--		<button class="sidebutton" type="button">Invite Followers</button><br />
 		<button class="sidebutton" type="button">New Patient</button> -->
 <!-- 		<button class="sidebutton" id="butinvite" type="button">Invite Followers</button> -->
 <!--		<button class="sidebutton" id="butswitch" type="button">Switch Patients</button> -->
-		<?php
-			session_start();
-			include 'dbstuff.php';
-//			require 'funpick.php';
-			
-			
-			if (!con) 
-			{
-				die ('could not connect');
-			}
-			else
-			{
-				if ($_SESSION['user'] >0)
+
+			<?php /************************  FOLLOWING **************************************/
+				session_start();
+				include 'dbstuff.php';
+	//			require 'funpick.php';
+				
+				
+				if (!con) 
 				{
-					mysql_select_db($dbuser,$con);
-					$IDUSER = $_SESSION['user'];
-					$query = mysql_query("SELECT * FROM permissions  WHERE (UserIDPERM = '$IDUSER')",$con) or die(mysql_error());			
-					echo "<form id='frmPatient' method='post' action='mainview.php'>"; 
-					echo "<h3>Following</h3>";
-					while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
-					{
-						$patpermid = $row['PatIDPERM'];
-						$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
-						$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
-						echo "<button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
-					}
-					mysql_close($con);
-					echo "</form>";
-				}
-			}	
-			?>		
-		
-		
-		<h3>Followed by</h3>
-		<div id="follow">
-			<?php
-		
-				require 'dbstuff.php';
-				date_default_timezone_set('America/New_York');
-				mysql_select_db($dbuser,$con);		
-				session_start();		
-				$patient = $_SESSION['Patient'];
-				$IDUSER = $_SESSION['user'];
-				$name = $_SESSION['name'];
-				if (!$patient)
-				{
-					header("Location:mainview.php");
+					die ('could not connect');
 				}
 				else
 				{
-					$query = mysql_query("SELECT * FROM permissions WHERE PatIDPERM = '$patient'",$con) or die(mysql_error());
-					if (mysql_num_rows($query)>=1)
+					if ($_SESSION['user'] >0)
 					{
-						echo "<p>";
+						mysql_select_db($dbuser,$con);
+						$IDUSER = $_SESSION['user'];
+						$query = mysql_query("SELECT * FROM permissions  WHERE (UserIDPERM = '$IDUSER')",$con) or die(mysql_error());			
+						echo "<form id='frmPatient' method='post' action='mainview.php'>"; 
+						echo "<h3>Following</h3>";
 						while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
 						{
-							$userid = $row["UserIDPERM"];
-							$query2 = mysql_query("SELECT * FROM users WHERE IDUSER = '$userid'",$con) or die(mysql_error());
-							$name = mysql_result($query2,0,1) . " " . mysql_result($query2,0,2);
-							echo $name . "<br />";
-							
+							$patpermid = $row['PatIDPERM'];
+							$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
+							$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
+							echo "<button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
 						}
-						echo "</p>";
+						mysql_close($con);
+						echo "</form>";
+					}
+				}	
+				?>  
+		
+		
+			<h3>Followed by</h3>
+			<div id="follow">
+				<?php 
+			
+					require 'dbstuff.php';
+					date_default_timezone_set('America/New_York');
+					mysql_select_db($dbuser,$con);		
+					session_start();		
+					$patient = $_SESSION['Patient'];
+					$IDUSER = $_SESSION['user'];
+					$name = $_SESSION['name'];
+					if (!$patient)
+					{
+						header("Location:mainview.php");
 					}
 					else
 					{
-						echo "No followers yet. Send some invites.";
+						$query = mysql_query("SELECT * FROM permissions WHERE PatIDPERM = '$patient'",$con) or die(mysql_error());
+						if (mysql_num_rows($query)>=1)
+						{
+							echo "<p>";
+							while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
+							{
+								$userid = $row["UserIDPERM"];
+								$query2 = mysql_query("SELECT * FROM users WHERE IDUSER = '$userid'",$con) or die(mysql_error());
+								$name = mysql_result($query2,0,1) . " " . mysql_result($query2,0,2);
+								echo $name . "<br />";
+								
+							}
+							echo "</p>";
+						}
+						else
+						{
+							echo "No followers yet. Send some invites.";
+						}
 					}
-				}
-				mysql_close($con);
-			?>		
-		</div>	<!-- follow -->
-	</div> <!-- mvsidenav -->
+					mysql_close($con);
+				?>		
+			</div>	<!-- follow -->
+		</div> <!-- mvsidenav -->
+	<div> <!-- nameleft -->
 	
 	<div id="mvshowhide">
 	</div> <!-- mvshowhide -->
@@ -153,7 +158,7 @@
 
 	</div> <!-- mvleft -->
 	
-
+	</div> <!-- left -->
 		
 
 <!--	<div id="newpat" class="clicked"></div> -->
