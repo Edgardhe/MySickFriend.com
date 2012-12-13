@@ -1,13 +1,48 @@
 <html>
+	<script type="text/javascript" src="Jquery.js"></script>
+	<script type="text/javascript">
+		function formValidator()
+		{
+			var email = document.getElementById('LoginEMail');
+			var password = document.getElementById('LoginPassword');
+			
+			if (txtEmpty(email,"This can't be blank"))
+			{
+				if (exeEmpty(password,"This can't be blank"))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+	
+		function txtEmpty(elem,alertMsg)
+		{
+			if(elem.value.length === 0)
+			{
+				alert(alertMsg);
+				elem.focus();
+				return false;
+			}
+			return true;
+		}	
+	
+	
+	
+	
+	</script>
+
+
+
 	<h3>Login</h3>
-	<form action="login.php" method="post" enctype="multipart/form-data">
+	<form action="login.php" onsubmit="return formValidator();" method="post" enctype="multipart/form-data">
 	<div id="login"> 
 	<p>	
 	<label for="email">Email:</label>
-	<input type="text" name="EMail" id="EMail" /><br />
+	<input type="text" name="EMail" id="LoginEMail" /><br />
 	
 	<label for="password">Password:</label>
-	<input type="password" name="Password" id="Password"/><br />
+	<input type="password" name="Password" id="LoginPassword"/><br />
 	
 	<input class="submit" type="submit" name="submit" value="Welcome Back" id="button" />
 	</p>
