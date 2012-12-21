@@ -2,8 +2,8 @@
 
 	session_start();
 	include 'dbstuff.php';
-	include 'Services/Twilio.php';
-	include 'TxtMsgSecure.php';
+	include 'NexmoMessage.php';
+	include 'TextMsgSecure.php';
 	mysql_select_db($dbuser,$con);
 	if (!$con) { 
 		die(' Could no connect');
@@ -28,40 +28,44 @@
 			$patname = mysql_result($query3,0,3) . " " . mysql_result($query3,0,4);
 		
 			// Step 3: instantiate a new Twilio Rest Client
-			$client = new Services_Twilio($AccountSid, $AuthToken);
-			
+//			$client = new Services_Twilio($AccountSid, $AuthToken);
+			$nexmo_sms = new NexmoMessage($nexmo_key, $nexmo_secret);
 			
 			while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
 			{
 				$userid = $row["UserIDPERM"];
 				$query2 = mysql_query("SELECT * FROM users WHERE IDUSER = '$userid'",$con) or die(mysql_error());
 				$message = $_SESSION['name'] . " posted about " . $patname . "-" . $status;
-				$to = mysql_result($query2,0,3);				
+				$to = "+1" . mysql_result($query2,0,3);				
 						$headers = 'From: info@CareAndTell.com' . "\r\n" .
 							'Reply-To: info@CareAndTell.com' . "\r\n" .
 							'X-Mailer: PHP/' . phpversion();							
-				$maxmessage = 160;
-				$emailtimes = 0;
-				if (strlen($message) > $maxmessage)
-				{
-					$i = 0;
+//				$maxmessage = 145;
+//				$emailtimes = 0;
+//				if (strlen($message) > $maxmessage)
+//				{
+//					$i = 0;
 					
-					$emailtimes = (floor(strlen($message) / $maxmessage));
-					$chunkmessage = str_split($message,$maxmessage);					
-					while ($i <= $emailtimes)
-					{
-				        $sms = $client->account->sms_messages->create("716-261-3316",$to,$chunkmessage[$i]);
+//					$emailtimes = (floor(strlen($message) / $maxmessage));
+//					$chunkmessage = str_split($message,$maxmessage);					
+//					while ($i <= $emailtimes)
+//					{
+//						$info = $nexmo_sms->sendText($to, "+17162474334", $chunkmessage[$i]);
+//						echo $nexmo_sms->displayOverview($info);
+//				        $sms = $client->account->sms_messages->create("716-261-3316",$to,$chunkmessage[$i]);
 
 //						mail($to, "update", $chunkmessage[$i], $headers);
-						$i++;
-					}
-				}	
-				else
-				{
-					$sms = $client->account->sms_messages->create($TwilioNumber,$to,$message);
+//						$i++;
+//					}
+//				}	
+//				else
+//				{
+					$info = $nexmo_sms->sendText($to, "+17162474334", $message);
+//					echo $nexmo_sms->displayOverview($info);
+//					$sms = $client->account->sms_messages->create("716-261-3316",$to,$message);
 //					mail("edgarhenderson@gmail.com", "update", $message, $headers);
 //					echo $to . "<br />" . $message . "<br />" . $headers . "<br />";
-				}			
+//				}			
 				
 			}
 		}
