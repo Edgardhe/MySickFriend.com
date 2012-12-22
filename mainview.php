@@ -17,7 +17,18 @@
 		
 		if ($_POST['listbox'])
 		{
-			$_SESSION['Patient'] = $_POST['listbox'];
+			if (substr($_POST['listbox'],0,1) === "n")
+			{
+				$_SESSION['Patient'] = substr($_POST['listbox'],1);
+				$changeColor = true;
+				// INSERT QUERY TO CHANGE PRIMARY PHONE RECEIVER
+				echo "<p>INSERT QUERY HERE" .  $_SESSION["Patient"] . "</p>";
+			}
+			else
+			{
+				$_SESSION["Patient"] = $_POST["listbox"];
+				$changeColor = false;
+			}
 		}
 			
 	?>
@@ -78,7 +89,15 @@
 							$patpermid = $row['PatIDPERM'];
 							$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
 							$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
-							echo "<button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
+							echo "<span class='patBtns'><button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
+							if ($changeColor = true)
+							{
+								echo "<button class='primaryBtnRed' name='listbox' value='n" . $row2["IDPATIENT"] . "'>x</button></span>";
+							}
+							else
+							{
+								echo "<button class='primaryBtnDim' name='listbox' value='n" . $row2["IDPATIENT"] . "'>x</button></span>";
+							}
 						}
 						mysql_close($con);
 						echo "</form>";

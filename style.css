@@ -57,12 +57,9 @@ body {color: black;}
 
 #mvsidenav {float:left;
 	background: #F5F6FA;
-	width: 125px;}
+	width: 140px;}
 
-
-#frmPatient button {width:100%;
-	background: #F5F6FA;
-		color:black;
+#frmPatient button {/*width:100%; */
 		border-top: 1px solid #F5F6FA;
 		border-bottom: 1px solid #F5F6FA;
 		border-left: 0;
@@ -77,8 +74,20 @@ body {color: black;}
 		background: #EBEDF2;
 		color: black;
 		border: 1px solid white;}
-		
 
+.patBtns {display: inline-block;}
+
+.patBtn {width: 125px;
+		background: #F5F6FA;
+		color:black;}
+
+.primaryBtnRed {width: 12px;
+	background-color: red;
+		color:white;}		
+
+.primaryBtnDim {width: 12px;
+	background-color: #EBEDF2;
+		color:white;}
 
 /*#invite {background: white;
 		width: 300px;
