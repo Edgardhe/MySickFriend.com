@@ -81,9 +81,11 @@ body {color: black;}
 		background: #F5F6FA;
 		color:black;}
 
-.primaryBtnRed {width: 12px;
-	background-color: red;
-		color:white;}		
+.primaryBtnGreen {width: 12px;
+	background-color: Green;
+		color:white;}	
+		
+.primaryBtnGreen button:hover {background-color: green;}
 
 .primaryBtnDim {width: 12px;
 	background-color: #EBEDF2;

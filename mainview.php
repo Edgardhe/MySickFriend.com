@@ -14,20 +14,24 @@
 	href="style.css" media="screen" />
 	<?php
 		session_start();	
+
 		
 		if ($_POST['listbox'])
 		{
+//			$user = $_SESSION["user"];
+//			$patient = $_SESSION["Patient"];				
+//			$query = mysql_query("SELECT * FROM permissions where UserIDPERM = '$user' AND PermType = '1'") or die(mysql_error());
 			if (substr($_POST['listbox'],0,1) === "n")
 			{
 				$_SESSION['Patient'] = substr($_POST['listbox'],1);
-				$changeColor = true;
+//				$changeColor = true;
 				// INSERT QUERY TO CHANGE PRIMARY PHONE RECEIVER
-				echo "<p>INSERT QUERY HERE" .  $_SESSION["Patient"] . "</p>";
+//				echo "<p>INSERT QUERY HERE" .  $_SESSION["Patient"] . "</p>";
 			}
 			else
 			{
 				$_SESSION["Patient"] = $_POST["listbox"];
-				$changeColor = false;
+//				$changeColor = false;
 			}
 		}
 			
@@ -45,7 +49,7 @@
 
 				<li><span class="navlist"><a href='index.php'> | HOME |</a></span></li>
 				<li><span class="navlist"><a href='logout.php'> LOGOUT |</a></span></li>
-				<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.htm'> NEW PATIENT |</a></span></li>
+				<li><spanclass="navlist"><a  id="btnNewPat" href='newpatient.php'> NEW PATIENT |</a></span></li>
 			</ul>
 		</div> <!-- navright -->	
 	</div> <!-- nav -->
@@ -90,13 +94,13 @@
 							$query2 = mysql_query("SELECT * FROM patient WHERE IDPATIENT = '$patpermid'",$con) or die(mysql_error());
 							$row2 = mysql_fetch_array($query2, MYSQL_ASSOC);
 							echo "<span class='patBtns'><button class='patBtn' name='listbox' value='" . $row2["IDPATIENT"] . "'>" . $row2["FNamePat"] . " " . $row2["LNamePat"] . " </button>";
-							if ($changeColor = true)
+							if ($row["PermType"] === "1")
 							{
-								echo "<button class='primaryBtnRed' name='listbox' value='n" . $row2["IDPATIENT"] . "'>x</button></span>";
+								echo "<button class='primaryBtnGreen' name='listbox' value='n" . $row2["IDPATIENT"] . "'>O</button></span>";
 							}
 							else
 							{
-								echo "<button class='primaryBtnDim' name='listbox' value='n" . $row2["IDPATIENT"] . "'>x</button></span>";
+								echo "<button class='primaryBtnDim' name='listbox' value='n" . $row2["IDPATIENT"] . "'>O</button></span>";
 							}
 						}
 						mysql_close($con);

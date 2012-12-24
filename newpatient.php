@@ -42,22 +42,24 @@
       <div id="newpat"> 
         <form enctype="multipart/form-data" method="post" action="newpatientP.php" class="testpat"> 
           <div id="newpat">
-            <p> <label for="FName">First Name:</label> 
+            <p> <label for="FName">First Name</label> 
             <input id="FName" name="FName" type="text" /> <br /> 
-            <label for="LName">Last Name:</label> 
+            <label for="LName">Last Name</label> 
             <input id="LName" name="LName" type="text" /> <br /> 
-            <label for="Location">Location:</label> 
+            <label for="Location">Location</label> 
             <input id="Location" name="Location" type="text" /> <br /> 
-            <label for="RoomNumber">Room Number:</label> 
+            <label for="RoomNumber">Room Number</label> 
             <input id="RoomNumber" name="RoomNumber" type="text" /> <br /> 
-            <label for="LocationStreet">Street:</label> 
+            <label for="LocationStreet">Street</label> 
             <input id="LocationStreet" name="LocationStreet" type="text" /> <br /> 
-            <label for="LocationCity">City:</label> 
+            <label for="LocationCity">City</label> 
             <input id="LocationCity" name="LocationCity" type="text" /> <br /> 
-            <label for="LocationState">State:</label> 
+            <label for="LocationState">State</label> 
             <input id="LocationState" name="LocationState" type="text" /> <br /> 
             <label for="LocationZip">Zip:</label> 
-            <input id="LocationZip" name="LocationZip" type="text" /> <br /> 
+            <input id="LocationZip" name="LocationZip" type="text" /> <br />
+            <label for="Primary">Primary Patient?</label>
+            <input id="Primary" name="Primary" type="checkbox" value="1" /> <br />
             <input class="submit" value="Submit" name="submit" type="submit" /> </p>
           </div>
         </form>
